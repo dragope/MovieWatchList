@@ -10,6 +10,7 @@ function MovieSearchContextProvider({children}){
     const [error, setError] = useState('')
     const [load, setLoad] = useState(false)
     const [watchList, setWatchList] = useState([])
+    const [watched, setWatched] = useState([])
     const [loadWl, setLoadWl] = useState(false)
 
     const reset = () => {
@@ -34,6 +35,24 @@ function MovieSearchContextProvider({children}){
         movieIndex > -1 &&
             setWatchList([...watchList, movieSearch[movieIndex]])
         console.log(watchList)
+    }
+
+    const addToWatched = (movie)=>{
+        setLoadWl(true)
+        let movieIndex = movieSearch.findIndex(i => i.id === movie.id)
+        movieIndex > -1 &&
+            setWatched([...watched, movieSearch[movieIndex]])
+        console.log(watched)
+    }
+
+    const removeFromWatched = (movie)=>{
+        setLoadWl(true)
+        let movieIndex = watchList.findIndex(i => i.id === movie.id)
+        movieIndex > -1 &&
+            console.log(movieIndex)
+            watched.splice(movieIndex,1)
+            setWatched([...watched])
+        console.log(watched)
     }
 
     const searchMovie = async() =>{
@@ -74,7 +93,11 @@ function MovieSearchContextProvider({children}){
             watchList,
             setWatchList,
             loadWl, 
-            setLoadWl
+            setLoadWl,
+            watched,
+            setWatched,
+            addToWatched,
+            removeFromWatched
         }}>
         {children}
         </MovieSearchContext.Provider>

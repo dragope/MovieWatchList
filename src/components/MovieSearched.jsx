@@ -4,7 +4,7 @@ import { useMovieSearchContext } from '../context/MovieSearchContext'
 
 function MovieSearched({ movie, onAdd, onRemove }) {
     
-    const { watchList } = useMovieSearchContext()
+    const { watchList, addToWatched, removeFromWatched, watched } = useMovieSearchContext()
 
     let movieIndex = watchList.findIndex(i => i.id === movie.id);
 
@@ -18,7 +18,16 @@ function MovieSearched({ movie, onAdd, onRemove }) {
             {
                 watchList.findIndex(i => i.id === movie.id) > -1 &&
                 <button onClick={()=>onRemove(movie)}>Remove From Watch List</button>
-            } 
+            }
+            {
+                watched.findIndex(i => i.id === movie.id) === -1 &&
+                <button onClick={()=>addToWatched(movie)}>Add to Watched</button>
+            }
+            {
+                watched.findIndex(i => i.id === movie.id) > -1 &&
+                <button onClick={()=>removeFromWatched(movie)}>Remove from Watched</button>
+            }
+            
             <p>{movie.overview}</p>
             <img alt='Poster' src={'https://image.tmdb.org/t/p/w500' + movie.poster_path}/>
         </div>

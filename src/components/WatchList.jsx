@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 function WatchList(){
 
-    const { watchList, removeFromWatchList } = useMovieSearchContext()
+    const { watchList, removeFromWatchList, addToWatched, removeFromWatched, watched } = useMovieSearchContext()
 
     return(
         <>
-        <Link to="/"><button>Continue Searching</button></Link>
+        <h2>Your WatchList</h2>
         {   watchList[0] == undefined ?
             <h4>Your Watch List is empty</h4>
             :
@@ -17,6 +17,14 @@ function WatchList(){
                     <h3>{movie.title}</h3>
                     <h5>Release date: {movie.release_date}</h5>
                     <p>{movie.overview}</p>
+                    {
+                        watched.findIndex(i => i.id === movie.id) === -1 &&
+                        <button onClick={()=>addToWatched(movie)}>Add to Watched</button>
+                    }
+                    {
+                        watched.findIndex(i => i.id === movie.id) > -1 &&
+                        <button onClick={()=>removeFromWatched(movie)}>Remove from Watched</button>
+                    }
                     <button onClick={()=>removeFromWatchList(movie)}>Remove from WatchList</button>
                 </div>
             ))

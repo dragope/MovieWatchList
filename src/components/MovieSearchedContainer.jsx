@@ -1,11 +1,11 @@
 import React from 'react'
 import MovieSearched from './MovieSearched';
-import{ useMovieSearchContext } from '../context/MovieSearchContext'
+import { useMovieSearchContext } from '../context/MovieSearchContext'
 import { Link } from 'react-router-dom'
 
 function MovieSearchedContainer() {
 
-    const { reset, searchMovie, loadWl, watchList, load, movieSearch, addToWatchList, error, removeFromWatchList } = useMovieSearchContext()
+    const { reset, searchMovie, load, movieSearch, addToWatchList, error, removeFromWatchList } = useMovieSearchContext()
 
     return (
         <>
@@ -15,12 +15,6 @@ function MovieSearchedContainer() {
                 <button onClick={searchMovie}>Search Movie</button>
                 <Link to='/watchlist'><button>Go to WatchList</button></Link>
             </div>
-            {
-                loadWl &&
-                watchList.map((movie)=>(
-                    <p key={movie.id}>{movie.title}</p>
-                ))
-            }
             { load === true &&
                 movieSearch.length > 1 &&
                 movieSearch.map((movie)=>(

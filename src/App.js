@@ -4,6 +4,7 @@ import MovieSearchContextProvider from './context/MovieSearchContext.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import WatchList from './components/WatchList';
 import Header from './components/Header';
+import Watched from './components/Watched';
 
 
 function App() {
@@ -22,6 +23,11 @@ function App() {
               exact
               path="/watchlist"
               element={<WatchList/>}
+            />
+            <Route
+              exact
+              path="/watched"
+              element={<Watched/>}
             />
           </Routes>
         </div>
