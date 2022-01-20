@@ -3,6 +3,7 @@ import MovieSearchedContainer from './components/MovieSearchedContainer';
 import MovieSearchContextProvider from './context/MovieSearchContext.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import WatchList from './components/WatchList';
+import Header from './components/Header';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <MovieSearchContextProvider>
       <BrowserRouter>
         <div>
+          <Header />
           <Routes>
             <Route
               exact
