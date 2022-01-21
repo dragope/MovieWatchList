@@ -1,16 +1,14 @@
-import React from 'react'
-import './MovieSearched.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import './Movie.css'
 import { useMovieSearchContext } from '../context/MovieSearchContext'
 
+function Movie({ movie }){
 
-function MovieSearched({ movie, onAdd, onRemove }) {
-    
-    const { watchList, addToWatched, removeFromWatched, watched } = useMovieSearchContext()
+    const { watchList, watched, onAdd, onRemove, addToWatched, removeFromWatched } = useMovieSearchContext()
 
     return(
-        <div key={movie.id} className='movie-searched-container'>
-            <h2>{movie.title}</h2>
+        <div className="movie-details">
+            <h3>{movie.title}</h3>
             {
                 watchList.findIndex(i => i.id === movie.id) === -1 &&
                 <button onClick={()=>onAdd(movie)}>Add To Watch List</button>
@@ -27,13 +25,10 @@ function MovieSearched({ movie, onAdd, onRemove }) {
                 watched.findIndex(i => i.id === movie.id) > -1 &&
                 <button onClick={()=>removeFromWatched(movie)}>Remove from Watched</button>
             }
+            <img alt='Poster' src={'https://image.tmdb.org/t/p/w500' + movie.poster_path}/>
             <p>{movie.overview}</p>
-            <div className='movie-searched-image-container'>
-                <img alt='Poster' src={'https://image.tmdb.org/t/p/w500' + movie.poster_path}/>
-            </div>
-            <Link to={`/movie/${movie.id}`}><button className='movie-searched-moredetails'>View more details</button></Link>
         </div>
     )
 }
 
-export default MovieSearched
+export default Movie

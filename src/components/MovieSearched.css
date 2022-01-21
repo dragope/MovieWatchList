@@ -1,0 +1,20 @@
+.movie-searched-container{
+    width: 450px;
+    height: 600px;
+    border: .5px solid grey;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.movie-searched-container > h2{
+
+}
+.movie-searched-image-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.movie-searched-image-container > img {
+    max-height: 400px;
+}

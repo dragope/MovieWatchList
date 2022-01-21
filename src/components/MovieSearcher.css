@@ -1,0 +1,18 @@
+.moviesearcher-container{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px
+}
+.moviesearcher-container > input {
+    width: 300px;
+    height: 30px;
+    margin-right: 5px;
+}
+.moviesearcher-container > button {
+    width: 120px;
+    height: 30px;
+    margin-right: 5px;
+}

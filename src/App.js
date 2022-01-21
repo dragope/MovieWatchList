@@ -1,10 +1,11 @@
 import React from 'react'
-import MovieSearchedContainer from './components/MovieSearchedContainer';
+import MovieSearcher from './components/MovieSearcher.jsx';
 import MovieSearchContextProvider from './context/MovieSearchContext.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import WatchList from './components/WatchList';
 import Header from './components/Header';
 import Watched from './components/Watched';
+import MovieContainer from './components/MovieContainer.jsx';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
             <Route
               exact
               path="/"
-              element={<MovieSearchedContainer/>}
+              element={<MovieSearcher/>}
             />
             <Route
               exact
@@ -28,6 +29,11 @@ function App() {
               exact
               path="/watched"
               element={<Watched/>}
+            />
+            <Route
+              exact
+              path="/movie/:movieid"
+              element={<MovieContainer/>}
             />
           </Routes>
         </div>

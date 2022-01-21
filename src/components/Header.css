@@ -1,0 +1,23 @@
+.nav-container{
+    width: 100vw;
+    height: 100px;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-title{
+    color: white;
+}
+.nav-navlist-container{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-navlist-link {
+    text-decoration: none;
+    color: white;
+}
