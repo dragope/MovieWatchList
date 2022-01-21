@@ -1,0 +1,19 @@
+.footer-container{
+    background-color: grey;
+    width: 100vw;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    justify-content: flex-end;
+}
+.footer-container > img {
+    height: 30px;
+    margin-left: 10px;
+}
+.footer-container > p {
+    font-size: 12px;
+}

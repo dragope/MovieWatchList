@@ -3,6 +3,7 @@ import { useMovieSearchContext } from '../context/MovieSearchContext'
 import { useState } from 'react';
 import './MovieSearcher.css'
 import MovieSearchContainer from './MovieSearchContainer';
+import Home from './Home';
 
 function MovieSearcher() {
 
@@ -45,10 +46,13 @@ function MovieSearcher() {
                 <button onClick={searchMovie}>Search Movie</button>
                 <button onClick={reset}>Refresh Search</button>
             </div>
-            { 
+            {   movieSearch[0] === undefined && error.length < 1
+                ?
+                <Home/>
+                :
                 error
                 ?
-                <h1>{error}</h1>
+                <h1 className="moviesearcher-error">{error}</h1>
                 :
                 loader === false
                 ?

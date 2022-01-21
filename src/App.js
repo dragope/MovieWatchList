@@ -6,6 +6,7 @@ import WatchList from './components/WatchList';
 import Header from './components/Header';
 import Watched from './components/Watched';
 import MovieContainer from './components/MovieContainer.jsx';
+import Footer from './components/Footer.jsx';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
               element={<MovieContainer/>}
             />
           </Routes>
+          <Footer/>
         </div>
       </BrowserRouter>
     </MovieSearchContextProvider> 
