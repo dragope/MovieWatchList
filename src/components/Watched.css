@@ -1,0 +1,27 @@
+.watched-movies-container{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+.watched-empty-container{
+    width: 100vw;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.watched-empty-container > h1 {
+    color: grey;
+    opacity: 70%;
+}
+
+.watched-title-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

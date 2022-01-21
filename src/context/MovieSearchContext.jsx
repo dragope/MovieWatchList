@@ -14,17 +14,13 @@ function MovieSearchContextProvider({children}){
 
 
     const removeFromWatchList = (movie)=>{
-        setLoadWl(true)
         let movieIndex = watchList.findIndex(i => i.id === movie.id)
         movieIndex > -1 &&
-            console.log(movieIndex)
             watchList.splice(movieIndex,1)
             setWatchList([...watchList])
-        console.log(watchList)
     }
 
     const addToWatchList = (movie)=>{
-        setLoadWl(true)
         let movieIndex = movieSearch.findIndex(i => i.id === movie.id)
         movieIndex > -1 &&
             setWatchList([...watchList, movieSearch[movieIndex]])
@@ -32,21 +28,16 @@ function MovieSearchContextProvider({children}){
     }
 
     const addToWatched = (movie)=>{
-        setLoadWl(true)
         let movieIndex = movieSearch.findIndex(i => i.id === movie.id)
         movieIndex > -1 &&
             setWatched([...watched, movieSearch[movieIndex]])
-        console.log(watched)
     }
 
     const removeFromWatched = (movie)=>{
-        setLoadWl(true)
-        let movieIndex = watchList.findIndex(i => i.id === movie.id)
+        let movieIndex = watched.findIndex(i => i.id === movie.id)
         movieIndex > -1 &&
-            console.log(movieIndex)
             watched.splice(movieIndex,1)
             setWatched([...watched])
-        console.log(watched)
     }
 
     return(

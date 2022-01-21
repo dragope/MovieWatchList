@@ -2,11 +2,12 @@ import React from 'react'
 import './MovieSearched.css'
 import { Link } from 'react-router-dom'
 import { useMovieSearchContext } from '../context/MovieSearchContext'
+import NoPoster from '../images/no_poster.jpeg'
 
 
-function MovieSearched({ movie, onAdd, onRemove }) {
+function MovieSearched({ movie, onAdd, onRemove, addToWatched, removeFromWatched }) {
     
-    const { watchList, addToWatched, removeFromWatched, watched } = useMovieSearchContext()
+    const { watchList, watched } = useMovieSearchContext()
 
     return(
         <div key={movie.id} className='movie-searched-container'>
@@ -31,10 +32,20 @@ function MovieSearched({ movie, onAdd, onRemove }) {
             }
             </div>
             <div className='movie-searched-overview-container'>
-                <p className='movie-searched-overview'>{movie.overview}</p>
+                <p className='movie-searched-overview'>{ 
+                    movie.overview = null || movie.overview === "" ?
+                    "No overview available for this film"
+                    :
+                    movie.overview
+                    }
+                </p>
             </div>
             <div className='movie-searched-image-container'>
-                <img alt='Poster' src={'https://image.tmdb.org/t/p/w500' + movie.poster_path}/>
+                <img alt='Poster' src={ movie.poster_path === null ?
+                    NoPoster
+                    :               
+                    'https://image.tmdb.org/t/p/w500' + movie.poster_path
+                    }/>
             </div>
             <Link to={`/movie/${movie.id}`}><button className='movie-searched-moredetails'>View more details</button></Link>
         </div>

@@ -1,0 +1,18 @@
+.watchlist-empty-container{
+    width: 100vw;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.watchlist-empty-container > h1 {
+    color: grey;
+    opacity: 70%;
+}
+
+.watchlist-title-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

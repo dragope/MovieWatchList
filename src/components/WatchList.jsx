@@ -1,6 +1,6 @@
 import React from "react";
 import { useMovieSearchContext } from '../context/MovieSearchContext'
-import { Link } from 'react-router-dom'
+import './WatchList.css'
 
 function WatchList(){
 
@@ -8,9 +8,13 @@ function WatchList(){
 
     return(
         <>
-        <h2>Your WatchList</h2>
+        <div>
+            <h2 className="watchlist-title-container">Your WatchList</h2>
+        </div>
         {   watchList[0] == undefined ?
-            <h4>Your Watch List is empty</h4>
+            <div className="watchlist-empty-container">
+                    <h1>Your WatchList is empty</h1>
+            </div>
             :
             watchList.map((movie)=>(
                 <div className="watchlist-movie" key={movie.id}>
