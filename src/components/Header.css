@@ -17,6 +17,9 @@
     align-items: center;
     justify-content: space-around;
 }
+.nav-navlist-container{
+    text-decoration: none;
+}
 .nav-navlist-link {
     text-decoration: none;
     color: white;

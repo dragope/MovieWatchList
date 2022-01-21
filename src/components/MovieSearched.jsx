@@ -11,6 +11,8 @@ function MovieSearched({ movie, onAdd, onRemove }) {
     return(
         <div key={movie.id} className='movie-searched-container'>
             <h2>{movie.title}</h2>
+            <p>Release date: {movie.release_date}</p>
+            <div className='movie-searched-button-container'>
             {
                 watchList.findIndex(i => i.id === movie.id) === -1 &&
                 <button onClick={()=>onAdd(movie)}>Add To Watch List</button>
@@ -27,7 +29,10 @@ function MovieSearched({ movie, onAdd, onRemove }) {
                 watched.findIndex(i => i.id === movie.id) > -1 &&
                 <button onClick={()=>removeFromWatched(movie)}>Remove from Watched</button>
             }
-            <p>{movie.overview}</p>
+            </div>
+            <div className='movie-searched-overview-container'>
+                <p className='movie-searched-overview'>{movie.overview}</p>
+            </div>
             <div className='movie-searched-image-container'>
                 <img alt='Poster' src={'https://image.tmdb.org/t/p/w500' + movie.poster_path}/>
             </div>
