@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 function Movie({ movie }){
 
-    const { watchList, watched, onAdd, onRemove, addToWatched, removeFromWatched, movieCredits, setMovieCredits } = useMovieSearchContext()
+    const { watchList, watched, addToWatchList, removeFromWatchList, addToWatched, removeFromWatched, movieCredits, setMovieCredits } = useMovieSearchContext()
     const [ load, setLoad ] = useState(true)
     const { movieid } = useParams()
 
@@ -37,11 +37,11 @@ function Movie({ movie }){
                         <div className="movie-details-data-buttons-container">
                             {
                                 watchList.findIndex(i => i.id === movie.id) === -1 &&
-                                <button onClick={()=>onAdd(movie)}>Add To Watch List</button>
+                                <button onClick={()=>addToWatchList(movie)}>Add To Watch List</button>
                             }  
                             {
                                 watchList.findIndex(i => i.id === movie.id) > -1 &&
-                                <button onClick={()=>onRemove(movie)}>Remove From Watch List</button>
+                                <button onClick={()=>removeFromWatchList(movie)}>Remove From Watch List</button>
                             }
                             {
                                 watched.findIndex(i => i.id === movie.id) === -1 &&

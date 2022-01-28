@@ -14,7 +14,7 @@
 }
 .movie-details-data-container{
     height: 600px;
-    width: 950px;
+    /* width: 950px; */
     margin-left: 20px;
     padding: 10px;
     margin-bottom: 20px;
@@ -32,7 +32,6 @@
 }
 .movie-details-data-buttons-container{
     height: 30px;
-    width: 900px;
     display: flex;
     align-items: center;
     margin-top: 10px;
@@ -40,23 +39,21 @@
 .movie-details-data-buttons-container > button {
     margin-right: 20px;
     height: 30px;
-    width: 150px;
+    width: 200px;
 }
 .movie-details-data-crew-container,
 .movie-details-data-overview-container,
 .movie-details-data-cast-container  {
     margin-top: 15px;
-    width: 900px;
+    padding-right: 20px;
 }
 .cast-container, .crew-container{
-    width: 900px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 10px;
 }
 .crew-container{
-    width: 900px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
