@@ -5,7 +5,7 @@ import './Header.css'
 function Header(){
     return(
         <div className="nav-container">
-            <h1 className="nav-title">WatchList</h1>
+            <Link to="/"><h1 className="nav-title">WatchList</h1></Link>
             <div className="nav-navlist-container">
                 <Link to='/watchlist'><p className="nav-navlist-link">Your WatchList</p></Link>
                 <Link to='/'><p className="nav-navlist-link">Search</p></Link>

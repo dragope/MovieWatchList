@@ -11,7 +11,7 @@ function MovieSearchContextProvider({children}){
     const [watchList, setWatchList] = useState([])
     const [watched, setWatched] = useState([])
     const [loadWl, setLoadWl] = useState(false)
-
+    const [movieCredits, setMovieCredits] = useState([])
 
     const removeFromWatchList = (movie)=>{
         let movieIndex = watchList.findIndex(i => i.id === movie.id)
@@ -40,6 +40,8 @@ function MovieSearchContextProvider({children}){
             setWatched([...watched])
     }
 
+ 
+
     return(
         <MovieSearchContext.Provider value={{
             addToWatchList,
@@ -55,7 +57,9 @@ function MovieSearchContextProvider({children}){
             watched,
             setWatched,
             addToWatched,
-            removeFromWatched
+            removeFromWatched,
+            movieCredits, 
+            setMovieCredits,
         }}>
         {children}
         </MovieSearchContext.Provider>

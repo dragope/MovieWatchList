@@ -25,6 +25,7 @@ function MovieSearcher() {
             if(resp.status === 200){
             const data = await resp.json()
             setMovieSearch(data.results)
+            console.log(movieSearch)
             data.results.length < 1 && setError('The movie you searched does not exist')
             setLoader(true)
             }else if(resp.status === 401){
@@ -58,7 +59,7 @@ function MovieSearcher() {
                 ?
                 <h1 className='loader'>LOADING</h1>
                 :
-                loader === true && movieSearch.length >= 1 &&
+                (loader === true || loader === undefined) && movieSearch.length >= 1 &&
                 <MovieSearchContainer />
             }
 
