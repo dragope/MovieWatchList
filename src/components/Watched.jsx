@@ -1,6 +1,7 @@
 import React from "react";
 import './Watched.css'
 import { useMovieSearchContext } from '../context/MovieSearchContext'
+import MovieWatched from "./MovieWatched";
 
 function Watched(){
 
@@ -19,12 +20,7 @@ function Watched(){
                 <div className="watched-movies-container">
                 {
                     watched.map((movie)=>(
-                        <div className="watchlist-movie" key={movie.id}>
-                            <h3>{movie.title}</h3>
-                            <h5>Release date: {movie.release_date}</h5>
-                            <p>{movie.overview}</p>
-                            <button onClick={()=>removeFromWatched(movie)}>Remove from Watched</button>
-                        </div>
+                        <MovieWatched movie={movie} removeFromWatched={ removeFromWatched } />
                     ))
                 }
                 </div>

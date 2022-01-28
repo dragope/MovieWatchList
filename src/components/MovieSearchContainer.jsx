@@ -9,9 +9,7 @@ function MovieSearchContainer({ movie }){
 
     return(
         <div className='moviesearch-container'>
-        {   movieSearch.length == 0 ?
-            <h1>We have no movies to show with those words</h1>
-            :
+        {   
             movieSearch.map((movie)=>(
                 <MovieSearched 
                     key={movie.id} 

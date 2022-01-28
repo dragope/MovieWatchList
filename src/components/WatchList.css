@@ -16,3 +16,13 @@
     align-items: center;
     margin-top: 20px;
 }
+.watchlist-movie-container{
+    width: 100vw;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    margin-bottom: 20px;
+}

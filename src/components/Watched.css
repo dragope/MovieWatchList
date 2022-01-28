@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-around;
     padding: 20px;
+    margin-bottom: 20px;
 }
 .watched-empty-container{
     width: 100vw;
@@ -24,4 +25,5 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
