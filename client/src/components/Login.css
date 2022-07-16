@@ -1,0 +1,33 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+}
+.login > input, label {
+    width: 500px;
+    height: 30px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.login > label {
+    text-align: center;
+}
+.login > button {
+    width: 250px;
+    height: 30px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.login-container >h2 {
+    margin: auto;
+    margin-top: 10px;
+}
+.login> p {
+    margin: auto;
+    font-size: 15px;
+}

@@ -1,0 +1,17 @@
+.home-container {
+  background-color: rgb(190, 190, 190);
+  width: 100vw;
+  height: 81vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+.home-claims {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
