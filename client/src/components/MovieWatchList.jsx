@@ -12,36 +12,22 @@ function MovieWatchList({ movie, removeFromWatchList, addToWatched, removeFromWa
     console.log(movie)
 
     return(
-        <div key={movie.id} className='movie-searched-container'>
-            <h2>{movie.title} ({movie.movie.release_date.substring(0,4)})</h2>
+            <div key={movie.id} className='movie-searched-container' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.movie.poster_path})`, backgroundSize: 'cover' }}>
+            <div className='movie-seached-details'>
+                <h2>{movie.title} ({movie.movie.release_date ? movie.movie.release_date.substring(0,4) : ""})</h2>
             <div className='movie-searched-button-container'>  
-                <button onClick={()=>removeFromWatchList(movie)}>Remove From Watch List</button>
+                <button className='movie-searched-button-watchlist' onClick={()=>removeFromWatchList(movie)}>remove from watchlist</button>
             {
                 watched.findIndex(i => i.id === movie.id) === -1 &&
-                <button onClick={()=>addToWatched(movie)}>Add to Watched</button>
+                <button className='movie-searched-button-watched' onClick={()=>addToWatched(movie)}>add to watched</button>
             }
             {
                 watched.findIndex(i => i.id === movie.id) > -1 &&
-                <button onClick={()=>removeFromWatched(movie)}>Remove from Watched</button>
+                <button className='movie-searched-button-watched' onClick={()=>removeFromWatched(movie)}>remove from watched</button>
             }
             </div>
-            <div className='movie-searched-overview-container'>
-                <p className='movie-searched-overview'>{ 
-                    movie.movie.overview = null || movie.movie.overview === "" ?
-                    "No overview available for this film"
-                    :
-                    movie.movie.overview
-                    }
-                </p>
+                <Link to={`/movie/${movie.id}`}><button className='movie-searched-moredetails'>wiew more details</button></Link>
             </div>
-            <div className='movie-searched-image-container'>
-                <img alt='Poster' src={ movie.movie.poster_path === null ?
-                    NoPoster
-                    :               
-                    'https://image.tmdb.org/t/p/w500' + movie.movie.poster_path
-                    }/>
-            </div>
-            <Link to={`/movie/${movie.id}`}><button className='movie-searched-moredetails'>View more details</button></Link>
         </div>
     )
 }

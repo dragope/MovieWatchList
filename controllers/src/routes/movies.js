@@ -31,8 +31,9 @@ router.post('/api/addtowatched', cors(corsOptions), async (req, res)=>{
     const { id, title, movie, user } = req.body;
     const newMovie = new Movie({ id, title, movie, user});
     newMovie.list = "watched";
-    res.send({message: `Added to Watched: movie "${title}" by user ${user}`, movie: newMovie });
     await newMovie.save();
+    res.send({message: `Added to Watched: movie "${title}" by user ${user}`, movie: newMovie });
+    
     }
 );
 

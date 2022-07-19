@@ -1,7 +1,6 @@
 .home-container {
-  background-color: rgb(190, 190, 190);
   width: 100vw;
-  height: 81vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

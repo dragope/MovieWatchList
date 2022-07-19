@@ -12,7 +12,10 @@ import Footer from './components/Footer.jsx';
 import Person from './components/Person.jsx';
 import Login from './components/Login.js';
 import Register from './components/Register.js';
+import UserMenu from './components/UserMenu.js';
 import PrivateRoute from './routing/PrivateRoute.js';
+import './App.css'
+import UserProfile from './components/UserProfile.js';
 
 function App() {
   
@@ -20,8 +23,11 @@ function App() {
     <AuthProvider sdk={auth}>
       <MovieSearchContextProvider>
           <BrowserRouter>
-            <div>
+            <div className='app'>
               <Header />
+              <div className='bottom-1'>
+              <UserMenu />
+              <div className='bottom-2'>
                 <Routes>
                     <Route
                         exact
@@ -59,8 +65,15 @@ function App() {
                         path="/person/:personid"
                         element={<Person/>}
                       /> 
+                      <Route
+                        exact
+                        path="/user"
+                        element={<UserProfile/>}
+                      /> 
                       </Route>
                 </Routes>
+                </div>
+                </div>
               <Footer/>
             </div>
           </BrowserRouter>

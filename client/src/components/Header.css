@@ -1,26 +1,48 @@
 .nav-container{
     width: 100vw;
-    height: 100px;
-    background-color: grey;
+    height: 230px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    background-color: transparent;
 }
 .nav-title{
-    color: white;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 150px;
+    line-height: 189px;
+    letter-spacing: -0.05em;
+    color: #E66E6E;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    margin-left: 40px;
 }
 .nav-navlist-container{
     width: 70vw;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-right: 40px;
+    margin-left: 180px;
     justify-content: space-around;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    background-color: transparent;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .nav-navlist-container{
     text-decoration: none;
 }
 .nav-navlist-link {
-    text-decoration: none;
     color: white;
+    background-color: transparent;
+}
+.nav-navlist-link:hover{
+    color: yellow;
+    cursor: pointer;
 }

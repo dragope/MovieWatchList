@@ -17,18 +17,18 @@ function WatchList(){
 
     return(
         <>
-        <div>
-            <h2 className="watchlist-title-container">Your WatchList</h2>
-        </div>
+
+         <h2 className="watchlist-title-container">watchlist</h2>
+
         
         {   watchList[0] === undefined ?
             <div className="watchlist-empty-container">
-                    <h1>Your WatchList is empty</h1>
+                    <h1>your watchlist is empty</h1>
             </div>
             :
             <div className="watchlist-movie-container">
             {   load ?
-                <h1>Loading...</h1>
+                <h1>loading...</h1>
                 :
                 watchList.map((movie)=>(
                     <MovieWatchList 

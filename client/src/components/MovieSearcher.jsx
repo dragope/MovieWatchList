@@ -42,9 +42,9 @@ function MovieSearcher() {
     return (
         <>
             <div className="moviesearcher-container">
-                <input type="text" className='input' placeholder='Movie name'></input>
-                <button onClick={searchMovie}>Search Movie</button>
-                <button onClick={reset}>Refresh Search</button>
+                <input type="text" className='input' placeholder='movie name'></input>
+                <button onClick={searchMovie} className='moviesearcher-search-button'>search</button>
+                <button onClick={reset}className='moviesearcher-refresh-button'>refresh</button>
             </div>
             {   movieSearch[0] === undefined && error.length < 1
                 ?

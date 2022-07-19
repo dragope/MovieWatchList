@@ -1,4 +1,40 @@
-.watched-movies-container{
+.watched-empty-container {
+    width: 100vw;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60vh;
+}
+
+.watched-empty-container>h1 {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 38px;
+    letter-spacing: -0.05em;
+    color: rgb(23, 23, 23);
+    margin-top: 20px;
+}
+
+.watched-title-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -0.05em;
+    color: rgb(23, 23, 23);
+    margin-top: 20px;
+}
+
+.watched-movies-container {
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
@@ -6,24 +42,5 @@
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    margin-bottom: 20px;
-}
-.watched-empty-container{
-    width: 100vw;
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-}
-.watched-empty-container > h1 {
-    color: grey;
-    opacity: 70%;
-}
-
-.watched-title-container{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
     margin-bottom: 20px;
 }

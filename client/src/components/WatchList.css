@@ -2,11 +2,19 @@
     width: 100vw;
     margin-top: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 60vh;
 }
 .watchlist-empty-container > h1 {
-    color: grey;
-    opacity: 70%;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 38px;
+    letter-spacing: -0.05em;
+    color: rgb(23, 23, 23);
+    margin-top: 20px;
 }
 
 .watchlist-title-container{
@@ -15,6 +23,14 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 38px;
+        letter-spacing: -0.05em;
+        color: rgb(23, 23, 23);;
+        margin-top: 20px;
 }
 .watchlist-movie-container{
     width: 100vw;

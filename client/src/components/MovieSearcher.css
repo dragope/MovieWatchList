@@ -9,15 +9,60 @@
     
 }
 .moviesearcher-container > input {
-    width: 300px;
-    height: 30px;
+    width: 970px;
+    height: 70px;
+    background: #FFFFFF;
+    border: 0.25px solid #000000;
+    border-radius: 10px;
     margin-right: 5px;
-    padding: 5px;
+    padding: 20px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -0.05em;
+    color: #272626
 }
 .moviesearcher-container > button {
-    width: 120px;
-    height: 30px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -0.05em;
+    color: white;
+    cursor: pointer;
+}
+.moviesearcher-search-button {
     margin-right: 5px;
+    width: 190px;
+    height: 70px;
+    left: 1158px;
+    top: 314px;
+    background: #E56E6E;
+    border: 0.25px solid #FFFFFF;
+    border-radius: 10px;
+}
+.moviesearcher-search-button:hover {
+    background: white;
+    color: #E56E6E;
+    border: 0.25px solid #E56E6E;
+}
+.moviesearcher-refresh-button {
+    margin-right: 5px;
+    width: 190px;
+    height: 70px;
+    left: 1367px;
+    top: 314px;
+    background: #272626;
+    border: 0.25px solid #FFFFFF;
+    border-radius: 10px;
+}
+.moviesearcher-refresh-button:hover {
+    background: white;
+    color: #272626;
+    border: 0.25px solid #272626;
 }
 .moviesearcher-error{
     width: 100vw;

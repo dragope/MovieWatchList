@@ -36,7 +36,7 @@ function Login() {
                 <input type="password" name="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
                 <button onClick={login}>Login</button>
             </form>
-            <h2>If you do not have an account, please <Link to='/register'>REGISTER HERE</Link></h2>
+            <h2>If you do not have an account, please <Link className='login-register-link' to='/register'>REGISTER HERE</Link></h2>
     </div>
   )
 }

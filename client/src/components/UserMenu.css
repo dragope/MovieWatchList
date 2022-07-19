@@ -1,0 +1,35 @@
+.usermenu-container{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    padding-right: 40px;
+    justify-content: flex-end;
+    align-items: center;
+    height: 30px;
+}
+.usermenu-container > button, .usermenu-editprofile {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing:-0.05em;
+    color: black;
+    margin-left: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.usermenu-profilepic{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: visible;
+    margin-left: 20px;
+    border: 0.25px solid #272626
+}
+.usermenu-container>button:hover, .usermenu-editprofile:hover{
+    color: yellow
+}

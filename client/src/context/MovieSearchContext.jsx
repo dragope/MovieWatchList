@@ -44,8 +44,8 @@ function MovieSearchContextProvider({children}){
         .then(getWatchlist())
     }
 
-    const addToWatched = (movie)=>{
-        fetch('/api/addtowatched', {
+    const addToWatched = async (movie)=>{
+        await fetch('/api/addtowatched', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

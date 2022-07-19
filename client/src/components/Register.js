@@ -40,9 +40,9 @@ function Register() {
                   :
                   <label>Please fill all the required fields</label>
               }
-              { password !== passwordRepeat && <p>Passwords must match</p> }
+              { password !== passwordRepeat && <label>Passwords must match</label> }
             </div>
-            <h2>If you already have an account, please <Link to='/login'>LOGIN HERE</Link></h2>
+            <h2>If you already have an account, please <Link className='login-register-link' to='/login'>LOGIN HERE</Link></h2>
           </>
         }
     </div>

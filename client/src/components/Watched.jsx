@@ -17,17 +17,15 @@ function Watched(){
 
     return(
         <>  
-            <div>
-                <h2 className="watched-title-container">Your Watched List</h2>
-            </div>
+                <h2 className="watched-title-container">watched</h2>
             {   watched[0] === undefined ?
                 <div className="watched-empty-container">
-                    <h1>Your Watched list is empty</h1>
+                    <h1>your watched list is empty</h1>
                 </div>
                 :
                 <div className="watched-movies-container">
                 {   load ?
-                    <h1>Loading...</h1>
+                    <h1>loading...</h1>
                     :
                     watched.map((movie)=>(
                         <MovieWatched 

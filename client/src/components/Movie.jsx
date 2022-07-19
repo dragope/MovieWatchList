@@ -36,30 +36,33 @@ function Movie({ movie }){
                             <h1>{movie.title}</h1>
                             <p>Release date: {movie.release_date}</p>
                         </div>
+                        <hr></hr>
                         <div className="movie-details-data-buttons-container">
                             {
                                 watchList.findIndex(i => i.id === movie.tmdbid) === -1 &&
-                                <button onClick={()=>addToWatchList(movie)}>Add To Watch List</button>
+                                <button className='movie-searched-button-watchlist' onClick={()=>addToWatchList(movie)}>add to watchlist</button>
                             }  
                             {
                                 watchList.findIndex(i => i.id === movie.tmdbid) > -1 &&
-                                <button onClick={()=>removeFromWatchList(movie)}>Remove From Watch List</button>
+                                <button className='movie-searched-button-watchlist' onClick={()=>removeFromWatchList(movie)}>remove from watchlist</button>
                             }
                             {
                                 watched.findIndex(i => i.id === movie.tmdbid) === -1 &&
-                                <button onClick={()=>addToWatched(movie)}>Add to Watched</button>
+                                <button className='movie-searched-button-watched' onClick={()=>addToWatched(movie)}>add to watched</button>
                             }
                             {
                                 watched.findIndex(i => i.id === movie.tmdbid) > -1 &&
-                                <button onClick={()=>removeFromWatched(movie)}>Remove from Watched</button>
+                                <button className='movie-searched-button-watched' onClick={()=>removeFromWatched(movie)}>remove from watched</button>
                             }
                         </div>
                         <div className="movie-details-data-overview-container">
-                            <h4>Overview:</h4>
+                            <h4>Overview</h4>
+                            <hr></hr>
                             <p>{movie.overview}</p>
                         </div>
                         <div className="movie-details-data-cast-container">
-                            <h4>Cast:</h4>
+                            <h4>Cast</h4>
+                            <hr></hr>
                             <div className="cast-container">
                                 {movieCredits.cast === undefined || movieCredits.cast.length === 0
                                     ?
@@ -75,7 +78,8 @@ function Movie({ movie }){
                             </div>
                         </div>
                         <div className="movie-details-data-crew-container">
-                            <h4>Crew:</h4>
+                            <h4>Crew</h4>
+                            <hr></hr>
                             <div className="crew-container">
                                 {movieCredits.crew === undefined || movieCredits.crew.length === 0
                                     ? 
