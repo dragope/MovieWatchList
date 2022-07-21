@@ -16,7 +16,7 @@ function MovieSearchContextProvider({children}){
     function getWatchlist(){
         fetch(`/api/watchlist/${user.id}`, {mode:'cors'})
             .then(res => res.json())
-            .then(movies => setWatchList(movies))
+                .then(movies => setWatchList(movies))
             .catch(err => console.error(err))
     }
 

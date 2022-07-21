@@ -8,9 +8,9 @@
     height: 30px;
 }
 .usermenu-container > button, .usermenu-editprofile {
+    width: 120px;
     font-family: 'Outfit';
     font-style: normal;
-    font-weight: 400;
     font-size: 15px;
     line-height: 19px;
     letter-spacing:-0.05em;

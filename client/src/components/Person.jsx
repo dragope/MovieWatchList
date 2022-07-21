@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import NoImage from '../images/no_picture.png'
+import MovieMiniatureActor from './MovieMiniatureActor'
+import MovieMiniatureCrew from './MovieMiniatureCrew'
 import './Person.css'
 
 function Person() {
@@ -36,7 +38,8 @@ function Person() {
                         }/>
                         <div className='person-details-data'>
                             <h1 className='person-details-name'>{personBio.name}</h1>
-                            <p className='person-details-birthday'>{personBio.birthday}</p>
+                            <p className='person-details-birthday'>Born: {personBio.birthday}</p>
+                            <hr />
                             <p className='person-details-biography'>{personBio.biography}</p>
                         </div>
                     </div>
@@ -44,31 +47,26 @@ function Person() {
                         <h2 className='person-details-movies-header'>Movies</h2>
                         <div className='person-details-movies-container'>
                             <div className='person-details-movies-actor-container'>
-                                <h3>As an Actor</h3>
+                                <h3>As an Actor</h3><hr />
+                                
                                 {personMovies.cast === undefined || personMovies.cast.length === 0
                                     ? 
                                         <p>These movies could not be found</p> 
                                     :
                                         personMovies.cast.map((movie)=>(
-                                            <div className='person-details-mappedmovie' key={movie.id}>
-                                                <Link to={`/movie/${movie.id}`}><p className='person-details-movies-title'>{movie.title} ({movie.release_date.substring(0,4)})</p></Link><p>represeting {movie.character}</p>
-                                            </div>
+                                            <MovieMiniatureActor key={movie} movie={movie} />
                                         ))
                                 }
                             </div>
                             <div className='person-details-movies-crew-container'>
-                                <h3>As Crew</h3>
+                                <h3>As Crew</h3><hr />
+                                
                                 {personMovies.crew === undefined || personMovies.crew.length === 0
                                     ? 
                                         <p>These movies could not be found</p> 
                                     :
                                         personMovies.crew.map((movie)=>(
-                                            <div className='person-details-mappedmovie' key={movie.id}>
-                                                <Link to={`/movie/${movie.id}`}><p className='person-details-movies-title'>
-                                                    {movie.title}  ({movie.release_date.substring(0,4)})</p>
-                                                </Link>
-                                                <p>credited as {movie.job}</p>
-                                            </div>
+                                            <MovieMiniatureCrew key={movie} movie={movie} />
                                         ))
                                 }
                             </div>
