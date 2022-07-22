@@ -2,11 +2,15 @@
     border-radius: 10px;
     width: 240px;
     height: 340px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
     box-shadow: 1px 1px 5px 1px rgba(146, 145, 145, 0.445);
     display: flex;
     justify-content: flex-end;
+    transition: transform 450ms;
+}
+.movie-miniature-container:hover{
+    transform: scale(1.08);
 }
 .movie-miniature-details{
     display: flex;
@@ -24,19 +28,27 @@
     height: 30px;
     border-radius: 5px;
     font-family: 'Outfit';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 20px;
-        color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #E56E6E;
+    border: 0.25px solid #FFFFFF;
+    color: white;
+    cursor: pointer;
+}
+.movie-miniature-details-button:hover{
+    background: white;
+    color: #E56E6E;
+    border: 0.25px solid #E56E6E;
 }
 .movie-miniature-details-title{
     font-family: 'Outfit';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 25px;
-        line-height: 30px;
-        color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    color: white;
 }
 .movie-miniature-details-character{
     font-family: 'Outfit';

@@ -43,15 +43,14 @@ function Person() {
                             <p className='person-details-biography'>{personBio.biography}</p>
                         </div>
                     </div>
-                    <div className='person-details-movies'>
-                        <h2 className='person-details-movies-header'>Movies</h2>
+
                         <div className='person-details-movies-container'>
                             <div className='person-details-movies-actor-container'>
-                                <h3>As an Actor</h3><hr />
+                                <h3>Movies as an Actor</h3><hr />
                                 
                                 {personMovies.cast === undefined || personMovies.cast.length === 0
                                     ? 
-                                        <p>These movies could not be found</p> 
+                                        <p>There are no movies we could find with this person credited as actor</p> 
                                     :
                                         personMovies.cast.map((movie)=>(
                                             <MovieMiniatureActor key={movie} movie={movie} />
@@ -59,11 +58,11 @@ function Person() {
                                 }
                             </div>
                             <div className='person-details-movies-crew-container'>
-                                <h3>As Crew</h3><hr />
+                                <h3>Movies as Crew</h3><hr />
                                 
                                 {personMovies.crew === undefined || personMovies.crew.length === 0
                                     ? 
-                                        <p>These movies could not be found</p> 
+                                        <p>There are no movies we could find with this person credited as crew</p> 
                                     :
                                         personMovies.crew.map((movie)=>(
                                             <MovieMiniatureCrew key={movie} movie={movie} />
@@ -71,7 +70,6 @@ function Person() {
                                 }
                             </div>
                         </div>
-                    </div>
                 </>
 
         }

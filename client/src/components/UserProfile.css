@@ -44,7 +44,7 @@
         color: black;
         margin-bottom: 40px;;
 }
-input {
+.user-password-form-container-field > input, .user-profile-form-container-field > input {
     width: 670px;
     height: 50px;
     background: #FFFFFF;
@@ -60,7 +60,7 @@ input {
     letter-spacing: -0.05em;
     color: #272626
 }
-button{
+.user-profile-form-password-submit, .user-form-password-submit{
     width: 290px;
     height: 70px;
     background: #E56E6E;

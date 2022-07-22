@@ -20,6 +20,20 @@
     background-color: transparent;
     cursor: pointer;
 }
+.usermenu-user{
+    width: 300px;
+    text-align: end;
+    margin-right: 20px;
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: -0.05em;
+        color: black;
+        border: none;
+        background-color: transparent;
+}
 .usermenu-profilepic{
     width: 100px;
     height: 100px;

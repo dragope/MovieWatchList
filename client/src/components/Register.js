@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import './Register.css'
 import { useMovieSearchContext } from '../context/MovieSearchContext'
-import { Link } from 'react-router-dom'
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config'
 
 
@@ -11,12 +11,14 @@ function Register() {
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
     const [ passwordRepeat, setPasswordRepeat] = useState('')
-    const { user } = useMovieSearchContext();
+    const { user, setUser } = useMovieSearchContext();
+    const navigate = useNavigate()
 
     async function signup(e){
       e.preventDefault();
       try{
         createUserWithEmailAndPassword(auth, email, password)
+        .then(()=> navigate('/login'))
       }
       catch(error){
         console.error(error)

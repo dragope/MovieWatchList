@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Login.css'
 import { Link, useNavigate } from 'react-router-dom'
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
 import { useMovieSearchContext } from '../context/MovieSearchContext'
 
@@ -13,20 +13,13 @@ function Login() {
   const { setUser } = useMovieSearchContext();
   const navigate = useNavigate()
 
-  async function login(e){
-    e.preventDefault()
-    try {
-      const user = await signInWithEmailAndPassword(auth, email, password);
-      setUser({
-        displayName: user.user.displayName,
-        email: user.user.email,
-        id: user.user.uid
-      })
-      navigate('/')
-    }
-    catch(error) {
-      console.error(error)
-    }
+  function login(e){
+    setPersistence(auth, browserLocalPersistence)
+      .then(()=> signInWithEmailAndPassword(auth, email, password))
+      .then(()=> setUser(auth.currentUser))
+      .then(navigate('/'))
+      .catch((error)=> console.error(error))
+      
   }
 
   return (
