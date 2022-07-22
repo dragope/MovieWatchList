@@ -21,6 +21,8 @@ function UserMenu() {
         navigate('/login')
     }
 
+    console.log(auth.currentUser)
+
     useEffect(()=>{}, [user])
 
   return (

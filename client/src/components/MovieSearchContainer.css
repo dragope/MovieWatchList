@@ -10,6 +10,7 @@
     margin-bottom: 30px;
     overflow-y: hidden;
     overflow-x: hidden;
+    background-color: transparent;
 }
 .moviesearch-container > h3 {
     font-family: 'Outfit';

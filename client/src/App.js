@@ -13,7 +13,7 @@ import Person from './components/Person.jsx';
 import Login from './components/Login.js';
 import Register from './components/Register.js';
 import UserMenu from './components/UserMenu.js';
-import PrivateRoute from './routing/PrivateRoute.js';
+import {PrivateRoute} from './routing/PrivateRoute.js';
 import './App.css'
 import UserProfile from './components/UserProfile.js';
 
