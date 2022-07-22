@@ -12,8 +12,6 @@ function MovieSearched({ movie }) {
 
     useEffect(()=>{}, [reload])
 
-    console.log(movie)
-
     return(
         <div key={movie.id} className='movie-searched-container' style={movie.poster_path === null ? { backgroundImage: `url(${NoPoster})`, backgroundSize: 'cover' } : { backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`, backgroundSize: 'cover' }}>
             <div className='movie-seached-details'>

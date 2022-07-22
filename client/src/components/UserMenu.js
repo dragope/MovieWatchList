@@ -4,8 +4,7 @@ import { useMovieSearchContext } from '../context/MovieSearchContext'
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
 import UserDefault from '../images/user-default.png'
-import ActualUser from '../images/christopher-campbell-rDEOVtE7vOs-unsplash.jpg'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function UserMenu() {
