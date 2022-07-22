@@ -17,42 +17,6 @@ function UserProfile() {
     const [ passwordConfirm, setPasswordConfirm ] = useState('')
     const [res, setRes] = useState('')
 
-    // const profileUpdate =()=>{
-    //     const updatedUser = {}
-    //     if(username.length > 1){
-    //         updatedUser.displayName = username;
-    //     } else {
-    //         updatedUser.displayName = user.displayName
-    //     }
-    //     if(email.length > 1){
-    //         updatedUser.email = email
-    //     } else {
-    //         updatedUser.email = user.email
-    //     }
-    //     if(pic != null){
-    //         const date = Date.now()
-    //         const imageRef = ref(storage, `/profile-pics/${user.email}+${pic.name}+${date}`)
-            
-    //         const getUrl = async() => {
-    //             const url = await getDownloadURL(imageRef)
-    //             console.log(url)
-    //         }
-
-    //         const uploadPic = async() => { 
-    //             const uploadImage = await uploadBytes(imageRef, pic)
-    //             console.log('pic uploaded')
-    //             getUrl();
-    //         }
-    //         uploadPic();
-           
-    //     console.log(updatedUser)
-    //     updateProfile(auth.currentUser, updatedUser)
-    //     .then(setRes("Your profile has been succesfully updated"))
-    //     .catch(err => console.error(err))
-
-    //     setUser(auth.currentUser)
-    // }}
-
     const profileUpdate = async() => {
         setRes('Please wait, we are processing the changes...')
         const updatedUser = {}
@@ -74,14 +38,14 @@ function UserProfile() {
                     const url = await getDownloadURL(imageRef)
                     updatedUser.photoURL = url
                     await updateProfile(auth.currentUser, updatedUser)
-                    setRes("Your profile has been succesfully updated")
+                    setRes("Your profile has been succesfully updated! You should see the changes effective in a short bit")
                     setUser(auth.currentUser)
                 } catch(err){
                     setRes(err)
                 }
             } else {
                 await updateProfile(auth.currentUser, updatedUser)
-                setRes("Your profile has been succesfully updated")
+                setRes("Your profile has been succesfully updated! You should see the changes effective in a short bit")
                 setUser(auth.currentUser)
             }
         
@@ -94,7 +58,6 @@ function UserProfile() {
   return (
     <div className='user-form'>
         <h1 className='user-form-title'>update your profile</h1>
-        { res && <p>{res}</p> }
         <div className='user-form-container'>
             <div className='user-profile-form-container'>
                 <div className='user-profile-form-container-field'>
@@ -123,6 +86,7 @@ function UserProfile() {
                 { password === passwordConfirm && password.length >= 6 ? <button className='user-form-password-submit'onClick={passwordUpdate}>update password</button> : <p>Passwords must match and must be, at least, 6 characters long</p>}
             </div>
         </div>
+        { res && <p className='user-profile-response'>{res}</p> }
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { useMovieSearchContext } from '../context/MovieSearchContext'
 import './WatchList.css'
 import MovieWatchList from './MovieWatchList'
+import EmptyList from '../images/empty-list.svg'
 import { useEffect, useState } from "react";
 
 function WatchList(){
@@ -23,6 +24,7 @@ function WatchList(){
         
         {   watchList[0] === undefined ?
             <div className="watchlist-empty-container">
+                    <img className="watchlist-empty-icon" src={EmptyList} alt="empty list icon" />
                     <h1>your watchlist is empty</h1>
             </div>
             :

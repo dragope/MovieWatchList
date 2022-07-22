@@ -10,12 +10,15 @@ import { useEffect } from 'react';
 
 function UserMenu() {
 
-    const { user, setUser } = useMovieSearchContext();
+    const { user, setUser, setMovieSearch, setWatched, setWatchList } = useMovieSearchContext();
     const navigate = useNavigate()
 
-    const logout = () => {
+    const logout = async() => {
         setUser(null)
-        signOut(auth);
+        setMovieSearch([])
+        setWatched([])
+        setWatchList([])
+        await signOut(auth);
         navigate('/login')
     }
 

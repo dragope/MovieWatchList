@@ -13,7 +13,7 @@ function Login() {
   const { setUser } = useMovieSearchContext();
   const navigate = useNavigate()
 
-  function login(e){
+  function login(){
     setPersistence(auth, browserLocalPersistence)
       .then(()=> signInWithEmailAndPassword(auth, email, password))
       .then(()=> setUser(auth.currentUser))
