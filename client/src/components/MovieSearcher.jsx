@@ -56,7 +56,7 @@ function MovieSearcher() {
                 :
                 loader === false
                 ?
-                <h1 className='loader'>LOADING</h1>
+                <h1 className='moviesearcher-loader'>LOADING</h1>
                 :
                 (loader === true || loader === undefined) && movieSearch.length >= 1 &&
                 <MovieSearchContainer />

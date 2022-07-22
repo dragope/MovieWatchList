@@ -75,14 +75,7 @@
     color: #272626;
     border: 0.25px solid #272626;
 }
-.moviesearcher-error{
-    width: 100vw;
-    text-align: center;
-    color: grey;
-    opacity: 70%;
-    margin-top: 50px;
-}
-.loader{
+.moviesearcher-error, .moviesearcher-loader{
     width: 100vw;
     text-align: center;
     color: grey;

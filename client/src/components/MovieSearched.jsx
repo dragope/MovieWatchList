@@ -17,7 +17,7 @@ function MovieSearched({ movie }) {
     return(
         <div key={movie.id} className='movie-searched-container' style={movie.poster_path !== null? { backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`, backgroundSize: 'cover' } : { backgroundImage: `url('/client/src/images/no_poster.jpeg'})`, backgroundSize: 'cover' }}>
             <div className='movie-seached-details'>
-                <h2>{movie.title} ({movie.release_date.substring(0,4)})</h2>
+                <h2>{movie.title} ({movie.release_date ? movie.release_date.substring(0,4) : 'Year not found'})</h2>
                 <div className='movie-searched-button-container'>
                 {
                     watchList.findIndex(i => i.id === movie.id) === -1 &&
