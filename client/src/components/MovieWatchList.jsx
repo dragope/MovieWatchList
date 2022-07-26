@@ -14,7 +14,7 @@ function MovieWatchList({ movie, removeFromWatchList, addToWatched, removeFromWa
     return(
             <div key={movie.id} className='movie-searched-container' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.movie.poster_path})`, backgroundSize: 'cover' }}>
             <div className='movie-seached-details'>
-                <h2>{movie.title} ({movie.movie.release_date ? movie.movie.release_date.substring(0,4) : ""})</h2>
+                <h2>{movie.title} ({movie.movie.release_date ? movie.movie.release_date.substring(0,4) : "Year not found"})</h2>
             <div className='movie-searched-button-container'>  
                 <button className='movie-searched-button-watchlist' onClick={()=>removeFromWatchList(movie)}>remove from watchlist</button>
             {

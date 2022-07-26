@@ -1,5 +1,6 @@
 import React from "react";
 import './Movie.css'
+import NoPoster from '../images/no_poster.jpeg'
 import { useMovieSearchContext } from '../context/MovieSearchContext'
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
@@ -20,7 +21,7 @@ function Movie({ movie }){
             .then(console.log(movieCredits))
             .then(setLoad(false))
             
-    },[movieid])
+    },[movieid]) 
     
     return(
         <>
@@ -29,7 +30,7 @@ function Movie({ movie }){
                 :
                 <div className="movie-details-container">
                     <div className="movie-details-poster-container">
-                        <img alt='Poster' src={'https://image.tmdb.org/t/p/w500' + movie.poster_path}/>
+                        <img alt='Poster' src={movie.poster_path === null ? NoPoster :'https://image.tmdb.org/t/p/w500' + movie.poster_path}/>
                     </div>
                     <div className="movie-details-data-container">
                         <div className="movie-details-data-title-container">

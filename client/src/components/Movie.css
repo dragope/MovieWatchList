@@ -20,6 +20,7 @@
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 50px;
+    min-height: 600px;
 }
 .movie-details-data-title-container{
     width: 900px;
