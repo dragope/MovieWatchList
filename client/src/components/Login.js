@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Login.css'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
-import { signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom'
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
 import { useMovieSearchContext } from '../context/MovieSearchContext'
 

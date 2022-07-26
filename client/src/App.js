@@ -1,6 +1,6 @@
 import React from 'react'
 import { AuthProvider } from 'reactfire';
-import { auth, app } from './firebase/firebase-config.js';
+import { auth } from './firebase/firebase-config.js';
 import MovieSearcher from './components/MovieSearcher.jsx';
 import MovieSearchContextProvider from './context/MovieSearchContext.jsx'
 import { BrowserRouter, Route, Routes } from "react-router-dom"

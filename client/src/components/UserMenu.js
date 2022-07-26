@@ -32,7 +32,7 @@ function UserMenu() {
                     <label className='usermenu-user'> {!auth.currentUser.displayName ? user.email : auth.currentUser.displayName}</label>
                     <Link to='/user'><button className='usermenu-editprofile'>view/edit profile</button></Link>
                     <button className='usermenu-logout' onClick={logout}>log out</button>
-                    <img className='usermenu-profilepic' alt='User profile image' src={auth.currentUser.photoURL ? auth.currentUser.photoURL : UserDefault}/>
+                    <img className='usermenu-profilepic' alt='User profile' src={auth.currentUser.photoURL ? auth.currentUser.photoURL : UserDefault}/>
                 </div>
             }
         </>

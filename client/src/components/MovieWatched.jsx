@@ -13,7 +13,7 @@ function MovieWatched({ movie, removeFromWatched }) {
     
 
     return(
-        <div key={movie.id} className='movie-searched-container' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.movie.poster_path})`, backgroundSize: 'cover' }}>
+        <div key={movie.id} className='movie-searched-container' style={movie.movie.poster_path === null ? { backgroundImage: `url(${NoPoster})`, backgroundSize: 'cover' } : { backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.movie.poster_path})`, backgroundSize: 'cover' }}>
             <div className='movie-seached-details'>
                 <h2>{movie.title} ({movie.movie.release_date ? movie.movie.release_date.substring(0,4) : 'Year not found'})</h2>
                 <div className='movie-searched-button-container'>  
