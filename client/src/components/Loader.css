@@ -1,0 +1,38 @@
+.loader-container{
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.loader-image{
+    width: 350px;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    opacity: 60%;
+}
+.loader-image-container{
+    width: 350px;
+    height: 350px;
+
+}
+.loader-text{
+    margin-top: 20px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    letter-spacing: -0.05em;
+    opacity: 60%;
+}
+
+@keyframes move {
+    0%{
+        transform: scale(0.75)
+    }
+    100%{
+        transform: scale(1)
+    }
+}

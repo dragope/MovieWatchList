@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import NoImage from '../images/no_picture.png'
+import Loader from './Loader'
 import MovieMiniatureActor from './MovieMiniatureActor'
 import MovieMiniatureCrew from './MovieMiniatureCrew'
 import './Person.css'
@@ -27,7 +28,7 @@ function Person() {
         {
             load ?
 
-                <h1 className='loader'>LOADING</h1>
+                <Loader/>
             :
                 <>
                     <div className='person-details'>

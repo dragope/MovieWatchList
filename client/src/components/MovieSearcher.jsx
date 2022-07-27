@@ -4,6 +4,7 @@ import { useState } from 'react';
 import './MovieSearcher.css'
 import MovieSearchContainer from './MovieSearchContainer';
 import Home from './Home';
+import Loader from './Loader';
 
 function MovieSearcher() {
 
@@ -56,7 +57,7 @@ function MovieSearcher() {
                 :
                 loader === false
                 ?
-                <h1 className='moviesearcher-loader'>loading, please wait...</h1>
+                <Loader/>
                 :
                 (loader === true || loader === undefined) && movieSearch.length >= 1 &&
                 <MovieSearchContainer />

@@ -29,7 +29,7 @@
 .login > label {
     text-align: center;
 }
-.login > button {
+.login-button {
     width: 190px;
     height: 70px;
     background: #E56E6E;
@@ -41,8 +41,13 @@
     font-size: 30px;
     line-height: 38px;
     letter-spacing: -0.05em;
-    color: black;
     margin-bottom: 20px;
+}
+.login-button:hover {
+    background: #FFFFFF;
+    border: 0.5px solid #E56E6E;
+    color: #E56E6E
+    
 }
 .login-container > h2, .login-register-link {
     margin: auto;

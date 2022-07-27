@@ -28,7 +28,7 @@ function Login() {
               <div className='login'>
                 <input type="email" name="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}}/>
                 <input type="password" name="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
-                <button onClick={login}>Login</button>
+                <button className='login-button' onClick={login}>Login</button>
             </div>
             <h2>If you do not have an account, please <Link className='login-register-link' to='/register'>REGISTER HERE</Link></h2>
     </div>

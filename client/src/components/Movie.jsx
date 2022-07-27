@@ -5,6 +5,7 @@ import { useMovieSearchContext } from '../context/MovieSearchContext'
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 function Movie({ movie }){
 
@@ -26,7 +27,7 @@ function Movie({ movie }){
     return(
         <>
             { load ?
-                <h1 className='loader'>LOADING</h1>
+                <Loader/>
                 :
                 <div className="movie-details-container">
                     <div className="movie-details-poster-container">

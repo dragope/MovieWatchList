@@ -32,9 +32,9 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 20px;
-    background-color: #E56E6E;
+    background: #272626;
     border: 0.25px solid #FFFFFF;
-    color: white;
+    color: #FFFFFF;
     cursor: pointer;
 }
 .movie-miniature-details-button:hover{

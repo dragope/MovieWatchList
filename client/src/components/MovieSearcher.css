@@ -34,7 +34,7 @@
     color: white;
     cursor: pointer;
 }
-.moviesearcher-error, .moviesearcher-loader{
+.moviesearcher-error{
     font-family: 'Outfit';
         font-style: normal;
         font-weight: 700;
@@ -44,6 +44,7 @@
         color: grey;
         min-height: 60vh;
         text-align: center;
+        margin-top: 20vh;
 }
 .moviesearcher-search-button {
     margin-right: 5px;
