@@ -16,6 +16,7 @@ import UserMenu from './components/UserMenu.js';
 import {PrivateRoute} from './routing/PrivateRoute.js';
 import './App.css'
 import UserProfile from './components/UserProfile.js';
+import MessageModal from './components/MessageModal.js';
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
       <MovieSearchContextProvider>
           <BrowserRouter>
             <div className='app'>
+              <MessageModal/>
               <Header />
               <div className='bottom-1'>
               <UserMenu />

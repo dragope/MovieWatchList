@@ -13,6 +13,7 @@ function MovieSearchContextProvider({children}){
     const [watched, setWatched] = useState([])
     const [reload, setReload] = useState(true)
     const [user, setUser] = useState(null)
+    const [modal, setModal] = useState('')
 
     function getWatchlist(){
         fetch(`${process.env.REACT_APP_BACK_URL}/api/watchlist/${auth.currentUser.uid}`, {mode:'cors'})
@@ -43,6 +44,8 @@ function MovieSearchContextProvider({children}){
             mode: 'cors'
         })
         .then(getWatchlist())
+        .then(setModal(`${movie.title} has been added to your watchlist`))
+        .then(openModal())
     }
 
     const addToWatched = async (movie)=>{
@@ -60,6 +63,8 @@ function MovieSearchContextProvider({children}){
             mode: 'cors'
         })
             .then(getWatched())
+            .then(setModal(`${movie.title} has been added to your watched list`))
+            .then(openModal())
     }
 
     const removeFromWatchList = async (movie)=>{
@@ -69,6 +74,8 @@ function MovieSearchContextProvider({children}){
         })
         .then(getWatchlist())
         .then(setReload(!reload))
+        .then(setModal(`${movie.title} has been removed from your watchlist`))
+        .then(openModal())
         .catch(err => console.error("error: " + err))
     }    
 
@@ -79,8 +86,22 @@ function MovieSearchContextProvider({children}){
         })
         .then(getWatched())
         .then(setReload(!reload))
+        .then(setModal(`${movie.title} has been removed from your watched list`))
+        .then(openModal())
         .catch(err => console.error("error: " + err))
     }
+
+    const closeModal = () => {
+    const modal = document.querySelector('.message-modal-container')
+    modal.style.visibility = 'hidden';
+}
+
+    const openModal = () => {
+    const modal = document.querySelector('.message-modal-container')
+    modal.style.visibility = 'visible';
+    setTimeout(closeModal, 4000)
+    }
+
 
     return(
         <MovieSearchContext.Provider value={{
@@ -100,7 +121,10 @@ function MovieSearchContextProvider({children}){
             getWatchlist,
             reload,
             user,
-            setUser
+            setUser,
+            closeModal,
+            openModal,
+            modal
         }}>
         {children}
         </MovieSearchContext.Provider>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import { useMovieSearchContext } from "../context/MovieSearchContext"; 
 import './Header.css'
+
 function Header(){
 
     const { user } = useMovieSearchContext();
