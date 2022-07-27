@@ -13,7 +13,7 @@ function MovieContainer(){
     const { error, setError } = useMovieSearchContext()
 
     useEffect(()=>{
-        fetch(`https://api.themoviedb.org/3/movie/${movieid}?api_key=77209655ed928ca6de56fa276ba23e5d&language=en-US`)
+        fetch(`https://api.themoviedb.org/3/movie/${movieid}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`)
             .then(resp => resp.json())
             .then(data => setMovie(data))
             .then(setLoad(false))

@@ -21,7 +21,7 @@ function MovieSearcher() {
         setLoader(false)
         const input = document.querySelector('.input').value
         try{
-            const resp = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=77209655ed928ca6de56fa276ba23e5d&query=${input}&page=1`)
+            const resp = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&query=${input}&page=1`)
             if(resp.status === 200){
             const data = await resp.json()
             setMovieSearch(data.results)

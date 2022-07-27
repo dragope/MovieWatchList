@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
 import { useMovieSearchContext } from '../context/MovieSearchContext'
 
+console.log(process.env.REACT_APP_API_KEY)
 
 function Login() {
 

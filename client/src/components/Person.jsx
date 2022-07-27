@@ -13,11 +13,11 @@ function Person() {
     const [ load, setLoad ] = useState(true)
 
     useEffect(()=>{
-        fetch(`https://api.themoviedb.org/3/person/${personid}?api_key=77209655ed928ca6de56fa276ba23e5d&language=en-US`)
+        fetch(`https://api.themoviedb.org/3/person/${personid}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`)
             .then(resp => resp.json())
             .then(data => setPersonBio(data))
             .then(setLoad(false))
-        fetch(`https://api.themoviedb.org/3/person/${personid}/movie_credits?api_key=77209655ed928ca6de56fa276ba23e5d&language=en-US`)
+        fetch(`https://api.themoviedb.org/3/person/${personid}/movie_credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`)
             .then(resp => resp.json())
             .then(data => setPesonMovies(data))
     }, [personid])
