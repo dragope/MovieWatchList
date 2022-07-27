@@ -1,6 +1,6 @@
 # dependencies
 /node_modules
+
+#files
 .env
 .gitignore
-/controllers/.env
-/controllers/.gitignore
