@@ -15,21 +15,21 @@ function MovieSearchContextProvider({children}){
     const [user, setUser] = useState(null)
 
     function getWatchlist(){
-        fetch(`/api/watchlist/${auth.currentUser.uid}`, {mode:'cors'})
+        fetch(`${process.env.REACT_APP_BACK_URL}/api/watchlist/${auth.currentUser.uid}`, {mode:'cors'})
             .then(res => res.json())
                 .then(movies => setWatchList(movies))
             .catch(err => console.error(err))
     }
 
    async function getWatched (){
-        await fetch(`/api/watched/${auth.currentUser.uid}`, {mode:'cors'})
+        await fetch(`${process.env.REACT_APP_BACK_URL}/api/watched/${auth.currentUser.uid}`, {mode:'cors'})
             .then(res => res.json())
             .then(movies => setWatched(movies))
             .catch(err => console.error(err))
     }
 
     const addToWatchList = async (movie)=>{
-        await fetch('/api/addtowatchlist', {
+        await fetch(`${process.env.REACT_APP_BACK_URL}/api/addtowatchlist`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -46,7 +46,7 @@ function MovieSearchContextProvider({children}){
     }
 
     const addToWatched = async (movie)=>{
-        await fetch('/api/addtowatched', {
+        await fetch(`${process.env.REACT_APP_BACK_URL}/api/addtowatched`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -63,7 +63,7 @@ function MovieSearchContextProvider({children}){
     }
 
     const removeFromWatchList = async (movie)=>{
-        await fetch(`/api/deletefromwatchlist/${auth.currentUser.uid}/${movie.id}`, {
+        await fetch(`${process.env.REACT_APP_BACK_URL}/api/deletefromwatchlist/${auth.currentUser.uid}/${movie.id}`, {
             method: "DELETE",
             mode: 'cors'
         })
@@ -73,7 +73,7 @@ function MovieSearchContextProvider({children}){
     }    
 
     const removeFromWatched = async (movie)=>{
-        await fetch(`/api/deletefromwatched/${auth.currentUser.uid}/${movie.id}`, {
+        await fetch(`${process.env.REACT_APP_BACK_URL}/api/deletefromwatched/${auth.currentUser.uid}/${movie.id}`, {
             method: "DELETE",
             mode: 'cors'
         })

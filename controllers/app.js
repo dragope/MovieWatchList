@@ -9,7 +9,7 @@ require("dotenv").config();
 require('./database')
 
 //Global variables
-app.set('port', process.env.port || 3080)
+app.set('port', process.env.PORT || 3080)
 
 //Middlewares
 app.use(bodyParser.json())
