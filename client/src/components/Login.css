@@ -9,18 +9,18 @@
     flex-direction: column;
     align-items: center;
 }
-.login > input {
-    width: 970px;
-    height: 70px;
+.login-input{
+    width: 70vw;
+    height: 7vh;
     background: #FFFFFF;
     border: 0.25px solid #000000;
     border-radius: 10px;
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 2vh;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 1.75vw;
     line-height: 38px;
     letter-spacing: -0.05em;
     color: #272626
@@ -33,6 +33,7 @@
     height: 70px;
     background: #E56E6E;
     border: 0.5px solid #FFFFFF;
+    color: white;
     border-radius: 10px;
     font-family: 'Outfit';
     font-style: normal;
@@ -54,13 +55,13 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 75vw;
     line-height: 38px;
     letter-spacing: -0.05em;
     color: black;
     margin-top: 20px;
 }
-.login> p {
+.login > p {
     margin: auto;
     font-size: 15px;
 }

@@ -12,18 +12,18 @@
     /* height: 50vh; */
 }
 
-.login>input {
-    width: 970px;
-    height: 70px;
+.register-input {
+    width: 70vw;
+    height: 7vh;
     background: #FFFFFF;
     border: 0.25px solid #000000;
     border-radius: 10px;
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 2vh;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 1.75vw;
     line-height: 38px;
     letter-spacing: -0.05em;
     color: #272626
@@ -33,14 +33,14 @@
     font-family: 'Outfit';
         font-style: normal;
         font-weight: 700;
-        font-size: 30px;
+        font-size: 3vh;
         line-height: 38px;
         letter-spacing: -0.05em;
         color: red;
         margin-top: 20px;
 }
 
-.login>button {
+.register-button {
     width: 300px;
     height: 70px;
     background: #E56E6E;
@@ -49,20 +49,25 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 3vh;
     line-height: 38px;
     letter-spacing: -0.05em;
     color: white;
     margin-bottom: 20px;
+    cursor: pointer;
 }
-
+.register-button:hover{
+    background: white;
+    border: 0.25px solid #e56e6e;
+    color: #E56E6E
+}
 .login-container>h2,
 .login-register-link {
     margin: auto;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 3.5vh;
     line-height: 38px;
     letter-spacing: -0.05em;
     color: black;

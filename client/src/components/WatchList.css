@@ -11,17 +11,17 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 50px;
-    line-height: 38px;
+    font-size: 5.5vh;
+    line-height: 5.5vh;
     letter-spacing: -0.05em;
     color: rgb(23, 23, 23);
-    margin-top: 20px;
+    margin-top: 2vh;
     opacity: 0.6;
 }
 .watchlist-empty-icon{
     opacity: 0.6;
-    width: 250px;
-    height: 250px;
+    width: 15vw;
+    height: 15vw;
 }
 .watchlist-title-container{
     width: 100vw;

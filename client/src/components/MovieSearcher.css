@@ -8,8 +8,8 @@
     margin-top: 20px;
 }
 .moviesearcher-container > input {
-    width: 970px;
-    height: 70px;
+    width: 60vw;
+    height: 7vh;
     background: #FFFFFF;
     border: 0.25px solid #000000;
     border-radius: 10px;
@@ -19,7 +19,7 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 1.75vw;
     line-height: 38px;
     letter-spacing: -0.05em;
     color: #272626
@@ -28,7 +28,7 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 1.75vw;
     line-height: 38px;
     letter-spacing: -0.05em;
     color: white;
@@ -48,10 +48,8 @@
 }
 .moviesearcher-search-button {
     margin-right: 5px;
-    width: 190px;
-    height: 70px;
-    left: 1158px;
-    top: 314px;
+    width: 10vw;
+    height: 7vh;
     background: #E56E6E;
     border: 0.25px solid #FFFFFF;
     border-radius: 10px;
@@ -63,10 +61,8 @@
 }
 .moviesearcher-refresh-button {
     margin-right: 5px;
-    width: 190px;
-    height: 70px;
-    left: 1367px;
-    top: 314px;
+    width: 10vw;
+    height: 7vh;
     background: #272626;
     border: 0.25px solid #FFFFFF;
     border-radius: 10px;

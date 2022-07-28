@@ -8,40 +8,40 @@
     height: 30px;
 }
 .usermenu-container > button, .usermenu-editprofile {
-    width: 120px;
+    width: 15vh;
     font-family: 'Outfit';
     font-style: normal;
-    font-size: 15px;
-    line-height: 19px;
+    font-size: 1.7vh;
+    line-height: 1.7vh;
     letter-spacing:-0.05em;
     color: black;
-    margin-left: 20px;
+    margin-left: 1.5vw;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 .usermenu-user{
-    width: 300px;
+    width: 15vw;
     text-align: end;
-    margin-right: 20px;
+    margin-right: 1.5vw;
         font-family: 'Outfit';
         font-style: normal;
         font-weight: 600;
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 2vh;
+        line-height: 2vh;
         letter-spacing: -0.05em;
         color: black;
         border: none;
         background-color: transparent;
 }
 .usermenu-profilepic{
-    width: 100px;
-    height: 100px;
-    margin-bottom: 40px;
+    width: 10vh;
+    height: 10vh;
+    margin-bottom: 5.5vh;
     object-fit: cover;
     border-radius: 50%;
     overflow: visible;
-    margin-left: 20px;
+    margin-left: 2vw;
     border: 0.25px solid #272626
 }
 .usermenu-container>button:hover, .usermenu-editprofile:hover{

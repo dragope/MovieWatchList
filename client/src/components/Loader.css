@@ -6,7 +6,7 @@
     flex-direction: column;
 }
 .loader-image{
-    width: 350px;
+    width: 15vw;
     animation-name: move;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -14,16 +14,16 @@
     opacity: 0.6;
 }
 .loader-image-container{
-    width: 350px;
-    height: 350px;
+    width: 15vw;
+    height: 15vw;
 
 }
 .loader-text{
-    margin-top: 20px;
+    margin-top: 5vh;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 45px;
+    font-size: 5vh;
     letter-spacing: -0.05em;
     opacity: 0.6;
 }

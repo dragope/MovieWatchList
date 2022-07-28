@@ -1,6 +1,6 @@
 .nav-container{
     width: 100vw;
-    height: 15vw;
+    height: 25vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -17,15 +17,15 @@
     color: #E66E6E;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-decoration: none;
-    margin-left: 40px;
+    margin-left: 0vw;
 }
 .nav-navlist-container{
-    width: 70vw;
+    width: 30vw;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 40px;
-    margin-left: 180px;
+    margin-right: 4vw;
+    margin-left: 5vw;
     justify-content: space-around;
     font-family: 'Outfit';
     font-style: normal;
@@ -41,6 +41,7 @@
 .nav-navlist-link {
     color: white;
     background-color: transparent;
+    margin-left: 5vw;
 }
 .nav-navlist-link:hover{
     color: yellow;

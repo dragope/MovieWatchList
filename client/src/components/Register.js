@@ -32,13 +32,13 @@ function Register() {
           :
           <>
             <div className='login'>
-              <input type="email" name="email" placeholder='Email' onChange={(e)=> setEmail(e.target.value)}/>
-              <input type="password" name="password" placeholder='Password' onChange={(e)=> setPassword(e.target.value)}/>
-              <input type="password" name="passwordrepeat" placeholder='Repeat password' onChange={(e)=> setPasswordRepeat(e.target.value)}/>
+              <input className='register-input' type="email" name="email" placeholder='Email' onChange={(e)=> setEmail(e.target.value)}/>
+              <input className='register-input' type="password" name="password" placeholder='Password' onChange={(e)=> setPassword(e.target.value)}/>
+              <input className='register-input' type="password" name="passwordrepeat" placeholder='Repeat password' onChange={(e)=> setPasswordRepeat(e.target.value)}/>
               {
                   email && password === passwordRepeat && password.length >= 6 
                   ?
-                  <button onClick={signup}>Create an account</button>
+                  <button className='register-button' onClick={signup}>Create an account</button>
                   :
                   <label>Please fill all the required fields</label>
               }
