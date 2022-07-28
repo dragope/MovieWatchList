@@ -3,7 +3,7 @@ import './UserProfile.css'
 import { useMovieSearchContext } from '../context/MovieSearchContext'
 import { useState } from 'react'
 import { auth } from '../firebase/firebase-config';
-import { updateProfile, updatePassword } from 'firebase/auth'
+import { updateProfile, updatePassword, updateEmail } from 'firebase/auth'
 import { storage } from '../firebase/firebase-config';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { async } from '@firebase/util';
@@ -29,11 +29,6 @@ function UserProfile() {
             }if(email.length > 1 && email !== confirmEmail){
                 return setRes('Emails must match')
             }
-            if(email.length > 1){
-                updatedUser.email = email
-            } else {
-                updatedUser.email = user.email
-            }
             if(pic != null){
                 const date = Date.now()
                 const imageRef = ref(storage, `/profile-pics/${user.email}+${pic.name}+${date}`)
@@ -55,17 +50,29 @@ function UserProfile() {
         
     }
 
-    const passwordUpdate = async()=>{
+    const passwordUpdate = async () => {
+        setRes('Please wait, we are processing the changes...')
         if(password === passwordConfirm){
             try{
                 await updatePassword(auth.currentUser, password)
                 setRes('Your password was updated successfully')
-            }
-            catch(error){
+            } catch(error){
                 setRes(`There was an error updating your password, please try again. Error: ${error}`)
             }
         } else {
             setRes('Passwords must match')
+        }
+    }
+
+    const emailUpdate = async () => {
+        setRes('Please wait, we are processing the changes...')
+        if(email === confirmEmail){
+            try{
+                await updateEmail(auth.currentUser, email)
+                setRes('Your email was updated successfully')
+            } catch(error){
+                setRes(`There was an error updating your email, please try again. Error: ${error}`)
+            }
         }
     }
 
@@ -83,6 +90,9 @@ function UserProfile() {
                         <label htmlFor="profilepic">profile picture</label>
                         <input type="file" id="img" name="img" onChange={(e)=>{setPic(e.target.files[0])}}/>
                     </div>
+                    <button className='user-profile-form-password-submit' onClick={profileUpdate}>update profile</button>
+                </div>
+                <div className='user-profile-form-fields'>
                     <div className='user-profile-form-container-field'>
                         <label htmlFor="email">email</label>
                         <input type="email" name="email" placeholder={auth.currentUser.email ? auth.currentUser.email : 'email'} onChange={(e)=>{setEmail(e.target.value)}}/>
@@ -91,8 +101,10 @@ function UserProfile() {
                         <label htmlFor="confirm-email">confim email</label>
                         <input type="confim-email" name="confim-email" placeholder={auth.currentUser.email ? auth.currentUser.email : 'email'} onChange={(e)=>{setConfirmEmail(e.target.value)}}/>
                     </div>
+                    
+                    { email === confirmEmail ? <button className='user-profile-form-password-submit' onClick={emailUpdate}>update email</button> : <p className='user-form-password-error'>Emails must match</p>}
                 </div>
-                <button className='user-profile-form-password-submit' onClick={profileUpdate}>update profile</button>
+                
             </div>
             <div className='user-password-form-container'>
                 <div className='user-password-form-fields'>
@@ -104,8 +116,8 @@ function UserProfile() {
                         <label htmlFor="confirm-password">confirm password</label>
                         <input type="password" name="confirm-password" placeholder='confirm password' onChange={(e)=>{setPasswordConfirm(e.target.value)}}/>
                     </div>
+                     { password === passwordConfirm && password.length >= 6 ? <button className='user-form-password-submit'onClick={passwordUpdate}>update password</button> : <p className='user-form-password-error'>Passwords must match and must be, at least, 6 characters long</p>}
                 </div>
-                { password === passwordConfirm && password.length >= 6 ? <button className='user-form-password-submit'onClick={passwordUpdate}>update password</button> : <p>Passwords must match and must be, at least, 6 characters long</p>}
             </div>
         </div>
         { res && <p className='user-profile-response'>{res}</p> }

@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items:baseline;
     margin-bottom: 2vw;
+    margin-top: 5vh;
 }
 .user-profile-form-fields, .user-password-form-fields{
     display: flex;
@@ -30,18 +31,24 @@
 }
 .user-profile-form-container-field, .user-password-form-container-field{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin-bottom: 1vh;
 }
 .user-profile-form-container-field>label, .user-password-form-container-field>label{
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 400;
-    font-size: 2.5vh;
+    font-size: 2.25vh;
     letter-spacing: -0.05em;
     color: black;
     margin-bottom: 1vh;
+    /* background-color: red; */
+    min-width: 10.5vw;
+    text-align: right;
+    margin-right: 0.5vw;
+
 }
 .user-form-title{
     font-family: 'Outfit';
@@ -53,8 +60,8 @@
     margin-bottom: 2vh;
 }
 .user-password-form-container-field > input, .user-profile-form-container-field > input {
-    width: 37.5vw;
-    height: 50px;
+    width: 20vw;
+    height: 5vh;
     background: #FFFFFF;
     border: 0.25px solid #000000;
     border-radius: 10px;
@@ -69,9 +76,9 @@
     color: #272626;
 }
 .user-profile-form-password-submit, .user-form-password-submit{
-    width: 18vw;
+    width: 15vw;
     min-width: 150px;
-    height: 7vh;
+    height: 4.5vh;
     background: #E56E6E;
     border: 0.5px solid #FFFFFF;
     border-radius: 10px;
@@ -90,10 +97,26 @@
     color: #E56E6E;
 }
 .user-profile-response{
-font-family: 'Outfit';
+    font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
     letter-spacing: -0.05em;
     color: red;
+}
+.user-form-password-error{
+    width: 15vw;
+    min-width: 150px;
+    height: 4.5vh;
+    text-align: center;
+    border: solid 0.5px grey;
+    background-color: white;
+    padding: 0.25vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    border-radius: 10px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5vh;
 }
