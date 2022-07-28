@@ -66,13 +66,15 @@ function UserProfile() {
 
     const emailUpdate = async () => {
         setRes('Please wait, we are processing the changes...')
-        if(email === confirmEmail){
+        if(email === confirmEmail && email.length > 5 && email.includes('@')){
             try{
                 await updateEmail(auth.currentUser, email)
                 setRes('Your email was updated successfully')
             } catch(error){
                 setRes(`There was an error updating your email, please try again. Error: ${error}`)
             }
+        } else {
+            setRes('Please insert a valid email')
         }
     }
 
@@ -99,10 +101,10 @@ function UserProfile() {
                     </div>
                     <div className='user-profile-form-container-field'>
                         <label htmlFor="confirm-email">confim email</label>
-                        <input type="confim-email" name="confim-email" placeholder={auth.currentUser.email ? auth.currentUser.email : 'email'} onChange={(e)=>{setConfirmEmail(e.target.value)}}/>
+                        <input type="confim-email" name="confim-email" placeholder='confirm your email' onChange={(e)=>{setConfirmEmail(e.target.value)}}/>
                     </div>
                     
-                    { email === confirmEmail ? <button className='user-profile-form-password-submit' onClick={emailUpdate}>update email</button> : <button className='user-form-password-error'>Emails must match</button>}
+                    { email === confirmEmail && email.length > 5 ? <button className='user-profile-form-password-submit' onClick={emailUpdate}>update email</button> : <button className='user-form-password-error'>Emails must match</button>}
                 </div>
                 
             </div>
