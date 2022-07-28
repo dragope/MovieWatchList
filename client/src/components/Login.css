@@ -68,3 +68,10 @@
 .login-register-link:hover{
     color: yellow
 }
+.login-error-response{
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: red;
+}

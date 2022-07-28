@@ -3,9 +3,10 @@ import './UserProfile.css'
 import { useMovieSearchContext } from '../context/MovieSearchContext'
 import { useState } from 'react'
 import { auth } from '../firebase/firebase-config';
-import { updateProfile } from 'firebase/auth'
+import { updateProfile, updatePassword } from 'firebase/auth'
 import { storage } from '../firebase/firebase-config';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
+import { async } from '@firebase/util';
 
 function UserProfile() {
 
@@ -25,7 +26,7 @@ function UserProfile() {
                 updatedUser.displayName = username;
             } else {
                 updatedUser.displayName = user.displayName
-            }if(email.length > 1 && email != confirmEmail){
+            }if(email.length > 1 && email !== confirmEmail){
                 return setRes('Emails must match')
             }
             if(email.length > 1){
@@ -54,8 +55,18 @@ function UserProfile() {
         
     }
 
-    const passwordUpdate =()=>{
-        console.log('Password updated')
+    const passwordUpdate = async()=>{
+        if(password === passwordConfirm){
+            try{
+                await updatePassword(auth.currentUser, password)
+                setRes('Your password was updated successfully')
+            }
+            catch(error){
+                setRes(`There was an error updating your password, please try again. Error: ${error}`)
+            }
+        } else {
+            setRes('Passwords must match')
+        }
     }
 
   return (
@@ -66,7 +77,7 @@ function UserProfile() {
                 <div className='user-profile-form-fields'>
                     <div className='user-profile-form-container-field'>
                         <label htmlFor="username">username</label>
-                        <input type="text" name="username" placeholder={user.displayName ? user.displayName : 'set your username'} onChange={(e)=>{setUsername(e.target.value)}}/>
+                        <input type="text" name="username" placeholder={auth.currentUser.displayName ? auth.currentUser.displayName : 'set your username'} onChange={(e)=>{setUsername(e.target.value)}}/>
                     </div>
                     <div className='user-profile-form-container-field'>
                         <label htmlFor="profilepic">profile picture</label>
@@ -74,11 +85,11 @@ function UserProfile() {
                     </div>
                     <div className='user-profile-form-container-field'>
                         <label htmlFor="email">email</label>
-                        <input type="email" name="email" placeholder={user.email ? user.email : 'email'} onChange={(e)=>{setEmail(e.target.value)}}/>
+                        <input type="email" name="email" placeholder={auth.currentUser.email ? auth.currentUser.email : 'email'} onChange={(e)=>{setEmail(e.target.value)}}/>
                     </div>
                     <div className='user-profile-form-container-field'>
                         <label htmlFor="confirm-email">confim email</label>
-                        <input type="confim-email" name="confim-email" placeholder={user.email ? user.email : 'email'} onChange={(e)=>{setConfirmEmail(e.target.value)}}/>
+                        <input type="confim-email" name="confim-email" placeholder={auth.currentUser.email ? auth.currentUser.email : 'email'} onChange={(e)=>{setConfirmEmail(e.target.value)}}/>
                     </div>
                 </div>
                 <button className='user-profile-form-password-submit' onClick={profileUpdate}>update profile</button>

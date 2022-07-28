@@ -11,6 +11,7 @@ function Login() {
 
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
+  const [ error, setError ] = useState('')
   const { setUser } = useMovieSearchContext();
   const navigate = useNavigate()
 
@@ -20,7 +21,7 @@ function Login() {
       .then(()=> navigate("/"))
       .then(()=> setUser(auth.currentUser))
       .then(()=> console.log(auth.currentUser))
-      .catch((error)=> console.error(error))
+      .catch((error)=> error.message === 'Firebase: Error (auth/wrong-password).' ?  setError('Wrong password') : setError('There was an error, please try again'))
   }
 
   return (
@@ -29,6 +30,10 @@ function Login() {
                 <input className='login-input' type="email" name="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}}/>
                 <input className='login-input' type="password" name="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
                 <button className='login-button' onClick={login}>Login</button>
+                {
+                  error &&
+                    <p className='login-error-response'>{error}</p>
+                }
             </div>
             <h2>If you do not have an account, please <Link className='login-register-link' to='/register'>REGISTER HERE</Link></h2>
     </div>
