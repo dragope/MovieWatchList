@@ -17,10 +17,10 @@
     letter-spacing: -0.05em;
     color: rgb(23, 23, 23);
     margin-top: 20px;
-    opacity: 60%;
+    opacity: 0.6;
 }
 .watched-empty-icon {
-    opacity: 60%;
+    opacity: 0.6;
     width: 250px;
     height: 250px;
 }

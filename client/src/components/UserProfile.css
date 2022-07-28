@@ -37,12 +37,12 @@
 }
 .user-form-title{
     font-family: 'Outfit';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 55px;
-        letter-spacing: -0.05em;
-        color: black;
-        margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    letter-spacing: -0.05em;
+    color: black;
+    margin-bottom: 20px;
 }
 .user-password-form-container-field > input, .user-profile-form-container-field > input {
     width: 670px;
