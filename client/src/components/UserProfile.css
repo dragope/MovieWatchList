@@ -73,6 +73,12 @@
     line-height: 38px;
     letter-spacing: -0.05em;
     color: white;
+    cursor: pointer;
+}
+.user-profile-form-password-submit:hover, .user-form-password-submit:hover{
+    background: white;
+    border: 0.5px solid #E56E6E;
+    color: #E56E6E;
 }
 .user-profile-response{
 font-family: 'Outfit';
