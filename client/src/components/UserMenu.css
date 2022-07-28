@@ -7,12 +7,13 @@
     align-items: center;
     height: 30px;
 }
-.usermenu-container > button, .usermenu-editprofile {
+.usermenu-logout, .usermenu-editprofile {
     width: 15vh;
+    min-width: 100px;
     font-family: 'Outfit';
     font-style: normal;
-    font-size: 1.7vh;
-    line-height: 1.7vh;
+    font-size: calc(8px + 1vh);
+    line-height: calc(8px + 1vh);
     letter-spacing:-0.05em;
     color: black;
     margin-left: 1.5vw;
@@ -24,15 +25,14 @@
     width: 15vw;
     text-align: end;
     margin-right: 1.5vw;
-        font-family: 'Outfit';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 2vh;
-        line-height: 2vh;
-        letter-spacing: -0.05em;
-        color: black;
-        border: none;
-        background-color: transparent;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(10px + 1.2vh);
+    line-height: calc(10px + 1.2vh);
+    letter-spacing: -0.05em;
+    color: black;
+    border: none;
 }
 .usermenu-profilepic{
     width: 10vh;

@@ -4,7 +4,7 @@
     align-items: center;
     padding: 2vw;
     margin-bottom: 40px;
-    min-height: 70vh;
+    min-height: 80vh;
 }
 .user-form-container{
     display: flex;
@@ -18,7 +18,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 80vw;
+    width: 90vw;
+    margin-bottom: 1.5vh;
 }
 .user-profile-form-container, .user-password-form-container{
     display: flex;
@@ -34,20 +35,18 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1vh;
 }
 .user-profile-form-container-field>label, .user-password-form-container-field>label{
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 400;
-    font-size: 2.25vh;
+    font-size: 2vh;
     letter-spacing: -0.05em;
     color: black;
     margin-bottom: 1vh;
-    /* background-color: red; */
     min-width: 10.5vw;
     text-align: right;
-    margin-right: 0.5vw;
+    margin-right: 1vw;
 
 }
 .user-form-title{
@@ -60,13 +59,14 @@
     margin-bottom: 2vh;
 }
 .user-password-form-container-field > input, .user-profile-form-container-field > input {
-    width: 20vw;
+    width: 25vw;
+    min-width: 130px;
     height: 5vh;
     background: #FFFFFF;
     border: 0.25px solid #000000;
     border-radius: 10px;
-    margin-bottom: 20px;
-    padding-left: 20px;
+    margin-bottom: 2vw;
+    padding-left: 2vw;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
@@ -77,7 +77,7 @@
 }
 .user-profile-form-password-submit, .user-form-password-submit{
     width: 15vw;
-    min-width: 150px;
+    min-width: 250px;
     height: 4.5vh;
     background: #E56E6E;
     border: 0.5px solid #FFFFFF;
@@ -106,7 +106,7 @@
 }
 .user-form-password-error{
     width: 15vw;
-    min-width: 150px;
+    min-width: 250px;
     height: 4.5vh;
     text-align: center;
     border: solid 0.5px grey;
