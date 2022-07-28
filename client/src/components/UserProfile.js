@@ -12,6 +12,7 @@ function UserProfile() {
     const { user, setUser } = useMovieSearchContext()
     const [ username, setUsername ] = useState('')
     const [ email, setEmail ] = useState('')
+    const [ confirmEmail, setConfirmEmail ] = useState('')
     const [ pic, setPic ] = useState(null)
     const [ password, setPassword ] = useState('')
     const [ passwordConfirm, setPasswordConfirm ] = useState('')
@@ -24,6 +25,8 @@ function UserProfile() {
                 updatedUser.displayName = username;
             } else {
                 updatedUser.displayName = user.displayName
+            }if(email.length > 1 && email != confirmEmail){
+                return setRes('Emails must match')
             }
             if(email.length > 1){
                 updatedUser.email = email
@@ -41,7 +44,7 @@ function UserProfile() {
                     setRes("Your profile has been succesfully updated! You should see the changes effective in a short bit")
                     setUser(auth.currentUser)
                 } catch(err){
-                    setRes(err)
+                    return setRes(err)
                 }
             } else {
                 await updateProfile(auth.currentUser, updatedUser)
@@ -60,28 +63,36 @@ function UserProfile() {
         <h1 className='user-form-title'>update your profile</h1>
         <div className='user-form-container'>
             <div className='user-profile-form-container'>
-                <div className='user-profile-form-container-field'>
-                    <label htmlFor="username">username</label>
-                    <input type="text" name="username" placeholder={user.displayName ? user.displayName : 'set your username'} onChange={(e)=>{setUsername(e.target.value)}}/>
-                </div>
-                <div className='user-profile-form-container-field'>
-                    <label htmlFor="email">email</label>
-                    <input type="email" name="email" placeholder={user.email ? user.email : 'email'} onChange={(e)=>{setEmail(e.target.value)}}/>
-                </div>
-                <div className='user-profile-form-container-field'>
-                    <label htmlFor="profilepic">profile picture</label>
-                    <input type="file" id="img" name="img" onChange={(e)=>{setPic(e.target.files[0])}}/>
+                <div className='user-profile-form-fields'>
+                    <div className='user-profile-form-container-field'>
+                        <label htmlFor="username">username</label>
+                        <input type="text" name="username" placeholder={user.displayName ? user.displayName : 'set your username'} onChange={(e)=>{setUsername(e.target.value)}}/>
+                    </div>
+                    <div className='user-profile-form-container-field'>
+                        <label htmlFor="profilepic">profile picture</label>
+                        <input type="file" id="img" name="img" onChange={(e)=>{setPic(e.target.files[0])}}/>
+                    </div>
+                    <div className='user-profile-form-container-field'>
+                        <label htmlFor="email">email</label>
+                        <input type="email" name="email" placeholder={user.email ? user.email : 'email'} onChange={(e)=>{setEmail(e.target.value)}}/>
+                    </div>
+                    <div className='user-profile-form-container-field'>
+                        <label htmlFor="confirm-email">confim email</label>
+                        <input type="confim-email" name="confim-email" placeholder={user.email ? user.email : 'email'} onChange={(e)=>{setConfirmEmail(e.target.value)}}/>
+                    </div>
                 </div>
                 <button className='user-profile-form-password-submit' onClick={profileUpdate}>update profile</button>
             </div>
             <div className='user-password-form-container'>
-                <div className='user-password-form-container-field'>
-                    <label htmlFor="password">password</label>
-                    <input type="password" name="password" placeholder='password' onChange={(e)=>{setPassword(e.target.value)}}/>
-                </div>
-                <div className='user-password-form-container-field'>
-                    <label htmlFor="confirm-password">confirm password</label>
-                    <input type="password" name="confirm-password" placeholder='confirm password' onChange={(e)=>{setPasswordConfirm(e.target.value)}}/>
+                <div className='user-password-form-fields'>
+                    <div className='user-password-form-container-field'>
+                        <label htmlFor="password">password</label>
+                        <input type="password" name="password" placeholder='password' onChange={(e)=>{setPassword(e.target.value)}}/>
+                    </div>
+                    <div className='user-password-form-container-field'>
+                        <label htmlFor="confirm-password">confirm password</label>
+                        <input type="password" name="confirm-password" placeholder='confirm password' onChange={(e)=>{setPasswordConfirm(e.target.value)}}/>
+                    </div>
                 </div>
                 { password === passwordConfirm && password.length >= 6 ? <button className='user-form-password-submit'onClick={passwordUpdate}>update password</button> : <p>Passwords must match and must be, at least, 6 characters long</p>}
             </div>
