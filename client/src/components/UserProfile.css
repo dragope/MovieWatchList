@@ -110,7 +110,8 @@
     height: 4.5vh;
     text-align: center;
     border: solid 0.5px grey;
-    background-color: white;
+    background-color: transparent;
+    color: grey;
     padding: 0.25vh;
     padding-left: 1vh;
     padding-right: 1vh;

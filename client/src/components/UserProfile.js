@@ -102,7 +102,7 @@ function UserProfile() {
                         <input type="confim-email" name="confim-email" placeholder={auth.currentUser.email ? auth.currentUser.email : 'email'} onChange={(e)=>{setConfirmEmail(e.target.value)}}/>
                     </div>
                     
-                    { email === confirmEmail ? <button className='user-profile-form-password-submit' onClick={emailUpdate}>update email</button> : <p className='user-form-password-error'>Emails must match</p>}
+                    { email === confirmEmail ? <button className='user-profile-form-password-submit' onClick={emailUpdate}>update email</button> : <button className='user-form-password-error'>Emails must match</button>}
                 </div>
                 
             </div>
@@ -116,7 +116,7 @@ function UserProfile() {
                         <label htmlFor="confirm-password">confirm password</label>
                         <input type="password" name="confirm-password" placeholder='confirm password' onChange={(e)=>{setPasswordConfirm(e.target.value)}}/>
                     </div>
-                     { password === passwordConfirm && password.length >= 6 ? <button className='user-form-password-submit'onClick={passwordUpdate}>update password</button> : <p className='user-form-password-error'>Passwords must match and must be, at least, 6 characters long</p>}
+                     { password === passwordConfirm && password.length >= 6 ? <button className='user-form-password-submit'onClick={passwordUpdate}>update password</button> : <button className='user-form-password-error'>Passwords must match and must be, at least, 6 characters long</button>}
                 </div>
             </div>
         </div>
