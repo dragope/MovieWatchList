@@ -2,8 +2,8 @@
   width: 100vw;
   height: 60vh;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .home-claims-container{
   display: flex;
@@ -15,8 +15,8 @@
     
 }
 .home-icon{
-  height: 400px;
-  width: 400px;
+  height: 45vh;
+  /* width: 45vh; */
 }
 shadow{
   text-shadow: 1px 1px 5px 1px rgba(146, 145, 145, 0.445);

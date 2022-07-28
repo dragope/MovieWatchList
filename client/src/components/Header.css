@@ -1,6 +1,6 @@
 .nav-container{
     width: 100vw;
-    height: 230px;
+    height: 15vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,7 +11,7 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 150px;
+    font-size: 10vw;
     line-height: 189px;
     letter-spacing: -0.05em;
     color: #E66E6E;
@@ -30,7 +30,7 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 2.5vw;
     line-height: 38px;
     background-color: transparent;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

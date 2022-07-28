@@ -3,14 +3,13 @@
     display: flex;
 }
 .movie-details-poster-container{
-    height: 600px;
-    width: 450px;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .movie-details-poster-container > img {
-    max-height: 600px;
+    max-height: 60vh;
     border-radius: 15px;
 }
 .movie-details-data-container{
@@ -21,9 +20,10 @@
     padding: 20px;
     margin-bottom: 50px;
     min-height: 600px;
+    width: 100%;
 }
 .movie-details-data-title-container{
-    width: 900px;
+    width: 100%;
     min-height: 70px;
     display: flex;
     flex-direction: column;

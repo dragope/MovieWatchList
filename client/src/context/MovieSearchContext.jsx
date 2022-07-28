@@ -44,7 +44,7 @@ function MovieSearchContextProvider({children}){
             mode: 'cors'
         })
         .then(getWatchlist())
-        .then(setModal(`${movie.title} has been added to your watchlist`))
+        .then(setModal(`'${movie.title}' has been added to your watchlist`))
         .then(openModal())
     }
 
@@ -63,7 +63,7 @@ function MovieSearchContextProvider({children}){
             mode: 'cors'
         })
             .then(getWatched())
-            .then(setModal(`${movie.title} has been added to your watched list`))
+            .then(setModal(`'${movie.title}' has been added to your watched list`))
             .then(openModal())
     }
 
@@ -74,7 +74,7 @@ function MovieSearchContextProvider({children}){
         })
         .then(getWatchlist())
         .then(setReload(!reload))
-        .then(setModal(`${movie.title} has been removed from your watchlist`))
+        .then(setModal(`'${movie.title}' has been removed from your watchlist`))
         .then(openModal())
         .catch(err => console.error("error: " + err))
     }    
@@ -86,7 +86,7 @@ function MovieSearchContextProvider({children}){
         })
         .then(getWatched())
         .then(setReload(!reload))
-        .then(setModal(`${movie.title} has been removed from your watched list`))
+        .then(setModal(`'${movie.title}' has been removed from your watched list`))
         .then(openModal())
         .catch(err => console.error("error: " + err))
     }
